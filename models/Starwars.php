@@ -1,7 +1,7 @@
 <?php
 
 class Starwars {
-	private $urlStarWarsApi = "https://swapi.co/api/";
+	private $urlStarWarsApi = "https://swapi.py4e.com/api/";
 	private $type;
 	private $id;
 	private $page;
@@ -63,7 +63,7 @@ class Starwars {
 		$cont = 0;
 
 		for ($i=1; $i <= 4; $i++) { 
-			$link = "https://swapi.co/api/starships/?page=$i";
+			$link = "https://swapi.py4e.com/api/starships/?page=$i";
 			$ch = curl_init($link);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);

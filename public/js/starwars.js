@@ -145,18 +145,20 @@ function people_view(data){
 	num_pages = pageVerify(json.count);
 	table = "";
 	table += "<h2>Characters</h2>";
-	table += "<table>";
-	table += "<tr><td>Name</td>" + 
-			 "<td>Height</td>" +
-			 "<td>Mass</td>" +
-			 "<td>Hair Color</td>" +
-			 "<td>Skin Color</td>" +
-			 "<td>Eye Color</td>" +
-			 "<td>Birth Year</td>" +
-			 "<td>Gender</td></tr>";
+	table += "<table class='table table-striped table-dark'>";	
+	table += "<thead><tr>";
+	table += "<th scope='col'>Name</th>" + 
+			 "<th scope='col'>Height</th>" +
+			 "<th scope='col'>Mass</th>" +
+			 "<th scope='col'>Hair Color</th>" +
+			 "<th scope='col'>Skin Color</th>" +
+			 "<th scope='col'>Eye Color</th>" +
+			 "<th scope='col'>Birth Year</th>" +
+			 "<th scope='col'>Gender</th>";
+	table += "</tr></thead><tbody>";
 	for(var i in results){
 		table += "<tr>";
-		table += "<td>" + results[i]['name'] + "</td>";
+		table += "<td scope='row'>" + results[i]['name'] + "</td>";
 		table += "<td>" + results[i]['height'] + "</td>";
 		table += "<td>" + results[i]['mass'] + "</td>";
 		table += "<td>" + results[i]['hair_color'] + "</td>";
@@ -171,7 +173,7 @@ function people_view(data){
 		table += "<button value='" + j + "' class='page_people'>" + j + "</button>";
 	}
 	table += "</td></tr>";	
-	table += "</table>";
+	table += "</tbody></table>";
 
 	return table;
 }
@@ -182,19 +184,21 @@ function planet_view(data){
 	num_pages = pageVerify(json.count);
 	table = "";
 	table += "<h2>Planets</h2>";
-	table += "<table>";
-	table += "<tr><td>Name</td>" + 
-			 "<td>Rotation Period</td>" +
-			 "<td>Orbital Period</td>" +
-			 "<td>Diameter</td>" +
-			 "<td>Climate</td>" +
-			 "<td>Gravity</td>" +
-			 "<td>Terrain</td>" +
-			 "<td>Surface Water</td>" +
-			 "<td>Population</td></tr>";
+	table += "<table class='table table-striped table-dark'>";
+	table += "<thead><tr>";
+	table += "<th>Name</th>" + 
+			 "<th>Rotation Period</th>" +
+			 "<th>Orbital Period</th>" +
+			 "<th>Diameter</th>" +
+			 "<th>Climate</th>" +
+			 "<th>Gravity</th>" +
+			 "<th>Terrain</th>" +
+			 "<th>Surface Water</th>" +
+			 "<th>Population</th>";
+	table += "</tr></thead><tbody>";
 	for(var i in results){
 		table += "<tr>";
-		table += "<td>" + results[i]['name'] + "</td>";
+		table += "<td scope='row'>" + results[i]['name'] + "</td>";
 		table += "<td>" + results[i]['rotation_period'] + "</td>";
 		table += "<td>" + results[i]['orbital_period'] + "</td>";
 		table += "<td>" + results[i]['diameter'] + "</td>";
@@ -210,7 +214,7 @@ function planet_view(data){
 		table += "<button value='" + j + "' class='page_planet'>" + j + "</button>";
 	}
 	table += "</td></tr>";	
-	table += "</table>";
+	table += "</tbody></table>";
 
 	return table;
 }
@@ -219,23 +223,24 @@ function starships_view(data){
 	json = JSON.parse(data); // Objeto principal
 	table = "";
 	table += "<h2>Starships</h2>";
-	table += "<table>";
-	table += "<tr><td>Name</td>" + 
-			 "<td>Model</td>" +
-			 "<td>Manufacturer</td>" +
-			 "<td>Cost In Credits</td>" +
-			 "<td>Length</td>" +
-			 "<td>Max Atmosphering Speed</td>" +
-			 "<td>Crew</td>" +
-			 "<td>Passengers</td>" +
-			 "<td>Cargo Capacity</td>" +
-			 "<td>Consumables</td>" +
-			 "<td>hyperdrive Rating</td>" +
-			 "<td>MGLT</td>" +
-			 "<td>Starship Class</td></tr>";
-	
+	table += "<table class='table table-striped table-dark'>";
+	table += "<thead><tr>";
+	table += "<th>Name</th>" + 
+			 "<th>Model</th>" +
+			 "<th>Manufacturer</th>" +
+			 "<th>Cost In Credits</th>" +
+			 "<th>Length</th>" +
+			 "<th>Max Atmosphering Speed</th>" +
+			 "<th>Crew</th>" +
+			 "<th>Passengers</th>" +
+			 "<th>Cargo Capacity</th>" +
+			 "<th>Consumables</th>" +
+			 "<th>hyperdrive Rating</th>" +
+			 "<th>MGLT</th>" +
+			 "<th>Starship Class</th>";
+	table += "</tr></thead><tbody>";
 	table += "<tr>";
-	table += "<td>" + json['name'] + "</td>";
+	table += "<td scope='row'>" + json['name'] + "</td>";
 	table += "<td>" + json['model'] + "</td>";
 	table += "<td>" + json['manufacturer'] + "</td>";
 	table += "<td>" + json['cost_in_credits'] + "</td>";
@@ -250,7 +255,7 @@ function starships_view(data){
 	table += "<td>" + json['starship_class'] + "</td>";
 	table += "</tr>";			
 		
-	table += "</table>";
+	table += "</tbody></table>";
 
 	return table;
 }
@@ -261,10 +266,12 @@ function average_view(data){
 	sum = 0;
 	table = "";
 	table += "<h2>Average</h2>";
-	table += "<table>";
-	table += "<tr><td>Name</td>" + 
-			 "<td>Consumables</td>" +
-			 "<td>Days</td></tr>";
+	table += "<table class='table table-striped table-dark'>";
+	table += "<thead><tr>";
+	table += "<th>Name</th>" + 
+			 "<th>Consumables</th>" +
+			 "<th>Days</th>";
+	table += "</tr></thead><tbody>";
 	for(var i in json){
 		str = json[i]['consumables'];
 		num = str.replace(/[^\d]+/g,'');
@@ -273,7 +280,7 @@ function average_view(data){
 		cont++;
 
 		table += "<tr>";
-		table += "<td>" + json[i]['name'] + "</td>";
+		table += "<td scope='row'>" + json[i]['name'] + "</td>";
 		table += "<td>" + json[i]['consumables'] + "</td>";		
 
 		switch (text) {
@@ -337,7 +344,7 @@ function average_view(data){
 
 		table += "</tr>";
 	}	
-	table += "</table>";
+	table += "</tbody></table>";
 	
 	total = sum / cont;
 

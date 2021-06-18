@@ -5,6 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="public/js/starwars.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='public/css/bootstrap_v413/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <style>
       * {
         font-family: Roboto;
@@ -17,7 +18,7 @@
     <p>Olá, os objetivos deste projeto são:</p>
     <ul style="text-align: justify; width: 50%;">
         <li>
-            Demonstrar com Jquery e PHP 7 a utilização de uma API Rest do Star Wars. Toda a documentação pode ser encontrada no link <a target='_blank' href='https://swapi.co'>AQUI</a>.
+            Demonstrar com Jquery e PHP 7 a utilização de uma API Rest do Star Wars. Toda a documentação pode ser encontrada no link <a target='_blank' href='https://swapi.py4e.com'>AQUI</a>.
         </li>
         <li>Aplicar MVC sem a utilização de <b><u>nenhum</u></b> framework</li>
     </ul>

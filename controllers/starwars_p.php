@@ -1,7 +1,7 @@
 <?php
 
 
-// documentação da api star wars: https://swapi.co/
+// documentação da api star wars: https://swapi.py4e.com/
 include '../models/Starwars.php';
 
   switch ($_GET['function']) {
